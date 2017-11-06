@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import be.vdab.enums.Geslacht;
+
 
 @Entity
 @Table(name = "docenten")
@@ -18,6 +20,7 @@ public class Docent implements Serializable {
 	private String familienaam;
 	private BigDecimal wedde;
 	private long rijksRegisterNr;
+	private Geslacht geslacht;
 	
 	public long getId() {
 		return id;
@@ -37,6 +40,10 @@ public class Docent implements Serializable {
 
 	public long getRijksRegisterNr() {
 		return rijksRegisterNr;
+	}
+	
+	public Geslacht getGeslacht() {
+		return geslacht;
 	}
 
 	public String getNaam() {   

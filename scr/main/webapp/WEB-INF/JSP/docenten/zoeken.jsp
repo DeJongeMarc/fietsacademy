@@ -16,7 +16,7 @@
 		<input type='submit' value='Zoeken'>
 	</form>
 	<c:if test='${not empty param and empty fouten and empty docent}'>   Docent niet gevonden   </c:if>
-	<c:if test='${not empty docent}'>     ${docent.naam}, wedde: &euro; <fmt:formatNumber
+	<c:if test='${not empty docent}'> ${docent.geslacht == 'MAN' ? '&#x2642;' : '&#x2640;'}    ${docent.naam}, wedde: &euro; <fmt:formatNumber
 			value='${docent.wedde}' />
 	</c:if>
 </body>
