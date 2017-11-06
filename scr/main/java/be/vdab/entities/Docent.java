@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -20,6 +22,7 @@ public class Docent implements Serializable {
 	private String familienaam;
 	private BigDecimal wedde;
 	private long rijksRegisterNr;
+	@Enumerated(EnumType.STRING)
 	private Geslacht geslacht;
 	
 	public long getId() {
