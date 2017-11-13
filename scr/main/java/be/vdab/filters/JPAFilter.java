@@ -18,9 +18,7 @@ public class JPAFilter implements Filter {
 	private static final EntityManagerFactory entityManagerFactory = Persistence
 			.createEntityManagerFactory("fietsacademy");
 
-	public static EntityManager getEntityManager() {
-		return entityManagerFactory.createEntityManager();
-	}
+	private static final ThreadLocal<EntityManager> entityManagers = new ThreadLocal<>();
 
 	@Override
 	public void init(FilterConfig config) throws ServletException {
@@ -30,8 +28,18 @@ public class JPAFilter implements Filter {
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
 			throws ServletException, IOException {
-		request.setCharacterEncoding("UTF-8");
-		chain.doFilter(request, response);
+		entityManagers.set(entityManagerFactory.createEntityManager());
+		try {
+			request.setCharacterEncoding("UTF-8");
+			chain.doFilter(request, response);
+		} finally {
+			entityManagers.get().close();
+			entityManagers.remove();
+		}
+	}
+
+	public static EntityManager getEntityManager() {
+		return entityManagers.get();
 	}
 
 	@Override
