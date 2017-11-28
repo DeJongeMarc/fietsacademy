@@ -8,6 +8,7 @@ import javax.persistence.PersistenceException;
 
 import be.vdab.entities.Docent;
 import be.vdab.repositories.DocentRepository;
+import be.vdab.valueobjects.AantalDocentenPerWedde;
 
 public class DocentService extends AbstractService {
 	private final DocentRepository docentRepository = new DocentRepository();
@@ -53,4 +54,15 @@ public class DocentService extends AbstractService {
 		return docentRepository.findByWeddeBetween(van, tot, vanafRij, aantalRijen);
 	}
 
+	public List<String> findVoornamen() {
+		return docentRepository.findVoornamen();
+	}
+
+	public BigDecimal findMaxWedde() {
+		return docentRepository.findMaxWedde();
+	}
+
+	public List<AantalDocentenPerWedde> findAantalDocentenPerWedde() {
+		return docentRepository.findAantalDocentenPerWedde();
+	}
 }
