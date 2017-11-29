@@ -19,7 +19,14 @@
 	<c:if test="${not empty campussen}">
 		<ul>
 			<c:forEach items='${campussen}' var='campus'>
-				<li>${campus.naam}: ${campus.adres.straat} ${campus.adres.huisNr}</li>
+				<li>${campus.naam}:${campus.adres.straat}
+					${campus.adres.huisNr}</li>
+				<dl>
+					<c:forEach items="${campus.telefoonNrs}" var="telefoonNr">
+						<dt>${telefoonNr.fax ? "Fax" : "Telefoon"}</dt>
+						<dd>${telefoonNr.nummer} ${telefoonNr.opmerking}</dd>
+					</c:forEach>
+				</dl>
 			</c:forEach>
 		</ul>
 	</c:if>

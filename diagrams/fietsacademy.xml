@@ -47,8 +47,8 @@
 		<entity-name>be.vdab.valueobjects.Adres</entity-name>
 		<entity-width>120</entity-width>
 		<entity-height>130</entity-height>
-		<entity-X-Coordinate>50</entity-X-Coordinate>
-		<entity-Y-Coordinate>608</entity-Y-Coordinate>
+		<entity-X-Coordinate>68</entity-X-Coordinate>
+		<entity-Y-Coordinate>598</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
 		<relation-collapsed>false</relation-collapsed>
 		<basic-collapsed>false</basic-collapsed>
@@ -57,9 +57,20 @@
 	<entity>
 		<entity-name>be.vdab.entities.Campus</entity-name>
 		<entity-width>120</entity-width>
-		<entity-height>128</entity-height>
-		<entity-X-Coordinate>490</entity-X-Coordinate>
-		<entity-Y-Coordinate>608</entity-Y-Coordinate>
+		<entity-height>148</entity-height>
+		<entity-X-Coordinate>380</entity-X-Coordinate>
+		<entity-Y-Coordinate>580</entity-Y-Coordinate>
+		<primary-collapsed>false</primary-collapsed>
+		<relation-collapsed>false</relation-collapsed>
+		<basic-collapsed>false</basic-collapsed>
+	</entity>
+
+	<entity>
+		<entity-name>be.vdab.valueobjects.TelefoonNr</entity-name>
+		<entity-width>120</entity-width>
+		<entity-height>110</entity-height>
+		<entity-X-Coordinate>68</entity-X-Coordinate>
+		<entity-Y-Coordinate>760</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
 		<relation-collapsed>false</relation-collapsed>
 		<basic-collapsed>false</basic-collapsed>
